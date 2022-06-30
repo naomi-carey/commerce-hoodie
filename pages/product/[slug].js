@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import {DetailsStyle, ProductInfo, Quantity, Buy} from '../../styles/ProductDetails';
 import {AiFillPlusCircle, AiFillMinusCircle} from 'react-icons/ai';
 
+
 export default function ProductDetails() {
 //fetch slug
 const {query} = useRouter();

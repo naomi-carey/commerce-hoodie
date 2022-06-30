@@ -1,19 +1,18 @@
-import Head from 'next/head';
-import { useQuery } from 'urql';
-import {PRODUCT_QUERY} from '../lib/query';
-import Product from '../components/Products';
-import { Gallery } from '../styles/Gallery';
+import Head from "next/head";
+import { useQuery } from "urql";
+import { PRODUCT_QUERY } from "../lib/query";
+import Product from "../components/Products";
+import { Gallery } from "../styles/Gallery";
 
 export default function Home() {
-//Fetch products from backend strapi
-const [results] = useQuery({query: PRODUCT_QUERY});
-const {data, fetching, error} = results;
+  //Fetch products from backend strapi
+  const [results] = useQuery({ query: PRODUCT_QUERY });
+  const { data, fetching, error } = results;
 
-//Check for the data coming in
- if(fetching) return <p>Loading....</p>
- if(error) return <p>Oh no....{error.messsage}</p>
- const products = data.products.data
-
+  //Check for the data coming in
+  if (fetching) return <p>Loading....</p>;
+  if (error) return <p>Oh no....{error.messsage}</p>;
+  const products = data.products.data;
 
   return (
     <div>
@@ -24,15 +23,12 @@ const {data, fetching, error} = results;
       </Head>
 
       <main>
-       <h1>Hello Next</h1>
-       <Gallery>
-       {products.map((product) => (
-         <Product key={product.attributes.slug}product={product}/>
-       ))}
-       </Gallery>
+        <Gallery>
+          {products.map((product) => (
+            <Product key={product.attributes.slug} product={product} />
+          ))}
+        </Gallery>
       </main>
-
-     
     </div>
-  )
+  );
 }
