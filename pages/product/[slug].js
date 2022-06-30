@@ -1,6 +1,8 @@
 import {useQuery} from 'urql';
 import {GET_PRODUCT_QUERY} from '../../lib/query';
 import { useRouter } from 'next/router';
+import {DetailsStyle, ProductInfo, Quantity, Buy} from '../../styles/ProductDetails';
+import {AiFillPlusCircle, AiFillMinusCircle} from 'react-icons/ai';
 
 export default function ProductDetails() {
 //fetch slug
@@ -20,19 +22,27 @@ if(fetching) return <p>Loading....</p>
 
 const {title, description, image} = data.products.data[0].attributes;
 
-  return (<div>
+  return (
+  
+  <DetailsStyle>
     <img src={image.data.attributes.formats.medium.url} alt={title}/>
+    <ProductInfo>
         <h3>{title}</h3>
         <p>{description}</p>
 
-    <div>
+    <Quantity>
         <span>Quantity</span>
-        <button>Plus</button>
+        <button><AiFillMinusCircle/></button>
         <p>0</p>
-        <button>Minus</button>
-    </div>
-    <button>Add to cart</button>
-  </div>
+        <button><AiFillPlusCircle/></button>
+    </Quantity>
+    <Buy>Add to cart</Buy>
+    
+    </ProductInfo>
+    
+    
+  
+  </DetailsStyle>
   
   );
 }
