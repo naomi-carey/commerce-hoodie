@@ -4,6 +4,8 @@ export const DetailsStyle = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 5rem;
+  border-style: solid;
+  border-color: red;
   img {
     width: 40%;
   }
@@ -11,6 +13,8 @@ export const DetailsStyle = styled.div`
 
 export const ProductInfo = styled.div`
   width: 40%;
+  border-style: solid;
+  border-color: green;
   button {
     font-size: 1rem;
     font-weight: medium;
@@ -23,6 +27,8 @@ export const Quantity = styled.div`
   display: flex;
   align-items: center;
   margin: 1rem 0rem;
+  border-style: solid;
+  border-color: pink;
 
   button {
     background: transparent;
@@ -48,4 +54,6 @@ export const Buy = styled.button`
   background: var(--primary);
   color: white;
   font-weight: 500;
+  border-style: solid;
+  border-color: yellow;
 `;

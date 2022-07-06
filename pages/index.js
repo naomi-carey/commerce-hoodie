@@ -23,6 +23,7 @@ export default function Home() {
       </Head>
 
       <main>
+        {/* <Nav /> */}
         <Gallery>
           {products.map((product) => (
             <Product key={product.attributes.slug} product={product} />
