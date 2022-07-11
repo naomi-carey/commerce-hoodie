@@ -18,7 +18,7 @@ export const CartStyle = styled.div`
   width: 30%;
   background: #f1f1f1;
   padding: 2rem 5rem;
-  overflow -y: scroll;
+  overflow: scroll;
   position: relative;
 `;
 
@@ -62,5 +62,17 @@ export const EmptyStyle = styled.div`
   svg {
     font-size: 10rem;
     color: var(--secondary);
+  }
+`;
+
+export const Checkout = styled.div`
+  button {
+    background: var(--primary);
+    padding: 1rem 2rem;
+    width: 100%;
+    color: white;
+    margin: top;
+    cursor: pointer;
+    border: none;
   }
 `;
